@@ -1,15 +1,14 @@
 services:
-  - type: web
+  - type: worker
     name: n8n
     env: docker
-    repo: https://github.com/joomcwegv/n8n-on-render
-    region: frankfurt
-    plan: free
     dockerfilePath: ./Dockerfile
+    region: frankfurt
+    autoDeploy: true
     envVars:
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: false
       - key: N8N_TUNNEL_SUBDOMAIN
         value: mymassabot
       - key: GENERIC_TIMEZONE
         value: Asia/Almaty
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: false
