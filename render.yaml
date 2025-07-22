@@ -6,16 +6,19 @@ services:
     branch: main
     dockerfilePath: ./Dockerfile
     autoDeploy: true
+    port: 3000
     envVars:
+      - key: TZ
+        value: Asia/Almaty
       - key: N8N_PORT
-        value: 3000
-      - key: WEBHOOK_URL
-        value: https://n8n-on-render-qkr7.onrender.com
+        value: "3000"
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PROTOCOL
+        value: https
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
         value: admin
       - key: N8N_BASIC_AUTH_PASSWORD
         value: admin123
-      - key: GENERIC_TIMEZONE
-        value: Asia/Almaty
