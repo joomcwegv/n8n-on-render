@@ -1,14 +1,21 @@
 services:
-  - type: worker
+  - type: web
     name: n8n
-    env: docker
+    runtime: docker
+    repo: https://github.com/joomcwegv/n8n-on-render
+    branch: main
     dockerfilePath: ./Dockerfile
-    region: frankfurt
     autoDeploy: true
     envVars:
-      - key: N8N_TUNNEL_SUBDOMAIN
-        value: mymassabot
+      - key: N8N_PORT
+        value: 3000
+      - key: WEBHOOK_URL
+        value: https://n8n-on-render-qkr7.onrender.com
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: admin123
       - key: GENERIC_TIMEZONE
         value: Asia/Almaty
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: false
