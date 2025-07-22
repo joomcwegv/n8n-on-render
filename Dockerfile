@@ -12,4 +12,4 @@ ENV N8N_TUNNEL_SUBDOMAIN=mymassabot \
 EXPOSE 3000
 VOLUME ["/home/node/.n8n"]
 
-CMD ["n8n"]
+CMD ["start"]
